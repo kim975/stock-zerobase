@@ -1,11 +1,16 @@
 package zerobase.stock.web;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 import zerobase.stock.model.Company;
+import zerobase.stock.persist.entity.CompanyEntity;
 import zerobase.stock.service.CompanyService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/company")
@@ -22,8 +27,9 @@ public class CompanyController {
     }
 
     @GetMapping
-    public ResponseEntity<?> searchCompany() {
-        return null;
+    public ResponseEntity<?> searchCompany(final Pageable pageable) {
+        Page<CompanyEntity> companyEntityList = companyService.getAllCompany(pageable);
+        return ResponseEntity.ok(companyEntityList);
     }
 
     @PostMapping

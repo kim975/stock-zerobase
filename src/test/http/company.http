@@ -3,5 +3,9 @@ POST http://localhost:8080/company
 Content-Type: application/json
 
 {
-  "ticker": "O"
+  "ticker": "COKE"
 }
+
+### search company
+GET http://localhost:8080/company?size=5
+Content-Type: application/json
