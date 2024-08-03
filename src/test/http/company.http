@@ -1,0 +1,7 @@
+### add company
+POST http://localhost:8080/company
+Content-Type: application/json
+
+{
+  "ticker": "O"
+}
