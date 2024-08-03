@@ -1,0 +1,3 @@
+### search company
+GET http://localhost:8080/finance/dividend/Coca-Cola Consolidated, Inc.
+Content-Type: application/json
