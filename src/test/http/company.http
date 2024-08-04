@@ -3,9 +3,13 @@ POST http://localhost:8080/company
 Content-Type: application/json
 
 {
-  "ticker": "COKE"
+  "ticker": "AAPL"
 }
 
 ### search company
 GET http://localhost:8080/company?size=5
+Content-Type: application/json
+
+### search company
+GET http://localhost:8080/company/autocomplete?keyword=Int
 Content-Type: application/json

@@ -10,6 +10,8 @@ import zerobase.stock.model.Company;
 import zerobase.stock.persist.entity.CompanyEntity;
 import zerobase.stock.service.CompanyService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/company")
 @RequiredArgsConstructor
@@ -21,7 +23,7 @@ public class CompanyController {
     public ResponseEntity<?> autocomplete(
             @RequestParam String keyword
     ) {
-        return null;
+        return ResponseEntity.ok(companyService.autocomplete(keyword));
     }
 
     @GetMapping
@@ -40,6 +42,7 @@ public class CompanyController {
         }
 
         Company company = companyService.save(ticker);
+        companyService.addAutocompleteKeyword(company.getName());
 
         return ResponseEntity.ok(company);
     }
