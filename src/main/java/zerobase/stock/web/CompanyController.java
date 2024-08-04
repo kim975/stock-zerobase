@@ -10,8 +10,6 @@ import zerobase.stock.model.Company;
 import zerobase.stock.persist.entity.CompanyEntity;
 import zerobase.stock.service.CompanyService;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/company")
 @RequiredArgsConstructor

@@ -29,8 +29,6 @@ public class FinanceService {
         List<DividendEntity> dividendEntityList = dividendRepository.findAllByCompanyId(company.getId());
 
         // 3. 결과 조합 후 반황
-
-
         return new ScrapeResult(
                 Company.builder()
                         .ticker(company.getTicker())
