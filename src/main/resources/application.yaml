@@ -29,4 +29,6 @@ spring:
     password:
     driverClassName: org.h2.Driver
 
-
+scheduler:
+  scrap:
+    yahoo: 0 0 1 * * *
