@@ -1,9 +1,6 @@
 package zerobase.stock.persist.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import zerobase.stock.model.Dividend;
 
@@ -13,6 +10,13 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @ToString
+@Table(
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        columnNames = {"companyId", "date"}
+                )
+        }
+)
 public class DividendEntity {
 
     @Id

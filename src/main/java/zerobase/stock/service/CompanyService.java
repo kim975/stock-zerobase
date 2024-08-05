@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.Trie;
 import org.apache.commons.collections4.trie.UnmodifiableTrie;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -61,16 +62,26 @@ public class CompanyService {
         return company;
     }
 
+    public List<String> getCompanyNamesByKeyword(String keyword) {
+        Pageable limit = PageRequest.of(0, 10);
+        Page<CompanyEntity> companyEntityList = companyRepository.findByNameStartingWithIgnoreCase(keyword, limit);
+        return companyEntityList.stream()
+                .map(CompanyEntity::getName)
+                .collect(Collectors.toList());
+    }
+
     public void addAutocompleteKeyword(String keyword) {
         trie.put(keyword, null);
     }
 
+    // 강의 내용으로 미사용이나 작성
     public List<String> autocomplete(String keyword) {
         return (List<String>) trie.prefixMap(keyword).keySet().stream()
                 .limit(10)
                 .collect(Collectors.toList());
     }
 
+    // 강의 내용으로 미사용이나 작성
     public void deleteAutocompleteKeyword(String keyword) {
         trie.remove(keyword);
     }
