@@ -17,4 +17,5 @@ public interface CompanyRepository extends JpaRepository<CompanyEntity, Long> {
 
     Page<CompanyEntity> findByNameStartingWithIgnoreCase(String s, Pageable limit);
 
+    Optional<CompanyEntity> findByTicker(String ticker);
 }

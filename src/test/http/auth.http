@@ -1,0 +1,18 @@
+### add user
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+  "username": "testId1",
+  "password": "testPassword1",
+  "roles": ["ROLE_READ", "ROLE_WRITE"]
+}
+
+### signin user
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "username": "testId1",
+  "password": "testPassword1"
+}

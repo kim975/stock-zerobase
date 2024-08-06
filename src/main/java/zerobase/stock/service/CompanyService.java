@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import zerobase.stock.model.Company;
 import zerobase.stock.model.ScrapeResult;
@@ -86,4 +87,17 @@ public class CompanyService {
         trie.remove(keyword);
     }
 
+    @Transactional
+    public String deleteCompany(String ticker) {
+        CompanyEntity company = companyRepository.findByTicker(ticker)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 회사입니다."));
+
+        dividendRepository.deleteAllByCompanyId(company.getId());
+        companyRepository.deleteById(company.getId());
+
+        deleteAutocompleteKeyword(company.getName());
+
+        return company.getName();
+
+    }
 }

@@ -1,15 +1,22 @@
 ### add company
 POST http://localhost:8080/company
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0SWQxIiwicm9sZXMiOlsiUk9MRV9SRUFEIiwiUk9MRV9XUklURSJdLCJpYXQiOjE3MjI5NTczMTksImV4cCI6MTcyMjk2MDkxOX0.PBDSG1fg-tvE1Q4tRfiM9f44xCT1ixXZNUVxY6H5xgtaknW1JD9WGZqwfV8ZmbwK
 
 {
-  "ticker": "MMM"
+  "ticker": "QQQ"
 }
 
 ### search company
 GET http://localhost:8080/company?size=5
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0SWQxIiwicm9sZXMiOlsiUk9MRV9SRUFEIiwiUk9MRV9XUklURSJdLCJpYXQiOjE3MjI5NTczMTksImV4cCI6MTcyMjk2MDkxOX0.PBDSG1fg-tvE1Q4tRfiM9f44xCT1ixXZNUVxY6H5xgtaknW1JD9WGZqwfV8ZmbwK
 
 ### search company
-GET http://localhost:8080/company/autocomplete?keyword=Int
+GET http://localhost:8080/company/autocomplete?keyword=I
+Content-Type: application/json
+
+### delete company
+DELETE http://localhost:8080/company/QQQ
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0SWQxIiwicm9sZXMiOlsiUk9MRV9SRUFEIiwiUk9MRV9XUklURSJdLCJpYXQiOjE3MjI5NTczMTksImV4cCI6MTcyMjk2MDkxOX0.PBDSG1fg-tvE1Q4tRfiM9f44xCT1ixXZNUVxY6H5xgtaknW1JD9WGZqwfV8ZmbwK
 Content-Type: application/json

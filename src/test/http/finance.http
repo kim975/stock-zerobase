@@ -1,3 +1,3 @@
 ### search company
-GET http://localhost:8080/finance/dividend/3M Company
+GET http://localhost:8080/finance/dividend/Invesco QQQ Trust
 Content-Type: application/json
