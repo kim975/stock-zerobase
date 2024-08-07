@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
+import zerobase.stock.exception.impl.NoCompanyException;
 import zerobase.stock.model.Company;
 import zerobase.stock.model.ScrapeResult;
 import zerobase.stock.persist.CompanyRepository;
@@ -90,7 +91,7 @@ public class CompanyService {
     @Transactional
     public String deleteCompany(String ticker) {
         CompanyEntity company = companyRepository.findByTicker(ticker)
-                .orElseThrow(() -> new RuntimeException("존재하지 않는 회사입니다."));
+                .orElseThrow(NoCompanyException::new);
 
         dividendRepository.deleteAllByCompanyId(company.getId());
         companyRepository.deleteById(company.getId());
