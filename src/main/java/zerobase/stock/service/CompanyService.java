@@ -2,7 +2,6 @@ package zerobase.stock.service;
 
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.Trie;
-import org.apache.commons.collections4.trie.UnmodifiableTrie;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

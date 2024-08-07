@@ -15,8 +15,8 @@ public enum Month {
     NOV("Nov", 11),
     DEC("Dec", 12);
 
-    private String s;
-    private int number;
+    private final String s;
+    private final int number;
 
     Month(String s, int number) {
         this.s = s;

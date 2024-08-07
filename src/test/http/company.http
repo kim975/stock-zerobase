@@ -1,7 +1,7 @@
 ### add company
 POST http://localhost:8080/company
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0SWQxIiwicm9sZXMiOlsiUk9MRV9SRUFEIiwiUk9MRV9XUklURSJdLCJpYXQiOjE3MjI5NTczMTksImV4cCI6MTcyMjk2MDkxOX0.PBDSG1fg-tvE1Q4tRfiM9f44xCT1ixXZNUVxY6H5xgtaknW1JD9WGZqwfV8ZmbwK
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0SWQxIiwicm9sZXMiOlsiUk9MRV9SRUFEIiwiUk9MRV9XUklURSJdLCJpYXQiOjE3MjMwMTMzMjAsImV4cCI6MTcyMzAxNjkyMH0.7-fAO32O5jHmSJZiir3zTs5DD8--Qt44ONdCVVbhdETPeTFF-fiP880eNCkekb-x
 
 {
   "ticker": "QQQ"
